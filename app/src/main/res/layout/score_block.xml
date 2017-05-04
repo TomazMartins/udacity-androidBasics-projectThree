@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical"
+    style="@style/scoreBlock">
+
+    <TextView
+        style="@style/titleOnPrimary"
+        android:id="@+id/txv_total_score"
+        android:gravity="end"
+        android:textSize="@dimen/scoreSize"
+        android:text="@string/std_score" />
+
+    <TextView
+        style="@style/textOnPrimary"
+        android:id="@+id/txv_score"
+        android:gravity="end"
+        android:text="@string/score"/>
+
+</LinearLayout>

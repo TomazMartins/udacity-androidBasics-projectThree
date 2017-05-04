@@ -20,4 +20,5 @@
     <string name="great_msg">Great! You are a real metal master!</string>
     <string name="question_in_dialog">Do you want continue?</string>
     <string name="your_score">Your score is:</string>
+    <string name="std_score">0000</string>
 </resources>

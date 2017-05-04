@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity"
+    tools:showIn="@layout/content_block"
+    android:orientation="vertical"
+    style="@style/questionBlock">
+
+    <TextView
+        style="@style/stdText"
+        android:text="@string/maq_001" />
+
+    <EditText
+        style="@style/stdText"/>
+
+</LinearLayout>
