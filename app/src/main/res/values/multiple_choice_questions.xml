@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mcq_001">
+        What is the musical precursor genre of Heavy Metal, that the list of great hits counts
+        on Stairway to Heaven, Born to be Wild and Smoke in the Water?
+    </string>
+
+    <string name="answer_mcq_001">Hard Rock</string>
+
+    <string-array name="options_mcq_001">
+        <item>Blues</item>
+        <item>Jazz</item>
+        <item>Country</item>
+        <item>Pop</item>
+    </string-array>
+
+    <string name="mcq_002">
+        What is the 70\'s band that is recognized by most as the creator of Heavy Metal?
+    </string>
+
+    <string name="answer_002">Black Sabbath</string>
+    
+    <string-array name="options_mcq_002">
+        <item>Led Zeppelin</item>
+        <item>Deep Purple</item>
+        <item>Kiss</item>
+        <item>Judas Priest</item>
+    </string-array>
+
+    <string name="mcq_003">
+        What is the subgenre of Heavy Metal characterized by being influenced by jazz fusion and
+        classical music as well as having conceptual albums and delving into a complex music
+        technique and theory?
+    </string>
+
+    <string name="answer_mcq_003">Progressive Metal</string>
+
+    <string-array name="options_mcq_003">
+        <item>Glam Metal</item>
+        <item>Melodic Power Metal</item>
+        <item>Death Metal</item>
+        <item>Doom Metal</item>
+    </string-array>
+</resources>

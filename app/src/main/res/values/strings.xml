@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Metal Show</string>
+    <string name="app_name" translatable="false">Metal Show</string>
+    <string name="score">Score</string>
+
+    <!-- Buttons -->
+    <string name="confirmation_button">Yes</string>
+    <string name="denied_button">No</string>
+    <string name="submit_button">Submit</string>
+    <string name="reset_button">Reset</string>
+
+    <!-- Fixed Checkbox -->
+    <string name="right_answer">Right</string>
+    <string name="wrong_answer">Wrong</string>
+
+    <!-- Dialog -->
+    <string name="zero_score_msg">Ops&#8230; Maybe next time</string>
+    <string name="bad_msg">I think you can do better</string>
+    <string name="medium_msg">It\'s a good score</string>
+    <string name="good_msg">Hey! Good job.</string>
+    <string name="great_msg">Great! You are a real metal master!</string>
+    <string name="question_in_dialog">Do you want continue?</string>
+    <string name="your_score">Your score is:</string>
 </resources>

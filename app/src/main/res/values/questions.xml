@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="open_questions">
+        <item>@string/oq_001</item>
+        <item>@string/oq_002</item>
+    </string-array>
+
+    <string-array name="multiple_answer_questions">
+        <item>@string/maq_001</item>
+        <item>@string/maq_002</item>
+    </string-array>
+
+    <string-array name="multiple_choice_questions">
+        <item>@string/mcq_001</item>
+        <item>@string/mcq_002</item>
+        <item>@string/mcq_003</item>
+    </string-array>
+
+    <string-array name="right_wrong_questions">
+    </string-array>
+</resources>

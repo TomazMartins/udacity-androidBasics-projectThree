@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="maq_001">Which bands are part of the so-called Big four, in Thrash Metal?</string>
+
+    <string-array name="answers_maq_001">
+        <item>Metallica</item>
+        <item>Slayer</item>
+        <item>Megadeth</item>
+        <item>Anthrax</item>
+    </string-array>
+
+    <string-array name="option_maq_001">
+        <item>Iron Maiden</item>
+        <item>Slipknot</item>
+        <item>Kreator</item>
+        <item>Pantera</item>
+    </string-array>
+
+    <string name="maq_002">What are the 3 bands that, in the late 80\'s, created Melodic Power Metal?</string>
+
+    <string-array name="answers_maq_002">
+        <item>Helloween</item>
+        <item>Blind Guardian</item>
+        <item>Stratovarius</item>
+    </string-array>
+
+    <string-array name="option_maq_002">
+        <item>Symphony X</item>
+        <item>Rhapsody of Fire</item>
+        <item>Avantasia</item>
+        <item>Primal Fear</item>
+        <item>Gamma Ray</item>
+    </string-array>
+</resources>

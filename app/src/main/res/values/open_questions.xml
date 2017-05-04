@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="oq_001">What is the origin of the famous salutation of Heavy Metal, the \"Horns up\"?</string>
+
+    <string-array name="answer_oq_001">
+        <item>James Dio</item>
+        <item>to put away</item>
+        <item>grandmother</item>
+        <item>evil</item>
+    </string-array>
+
+    <string name="oq_002">What is mean Headbanger?</string>
+
+    <string-array name="answer_oq_002">
+        <item>fan</item>
+        <item>metal</item>
+    </string-array>
+
+    <string name="oq_003">What is mean NWOBHM?</string>
+
+    <string-array name="answer_oq_003">
+        <item>New</item>
+        <item>Wave</item>
+        <item>Of</item>
+        <item>British</item>
+        <item>Heavy</item>
+        <item>Metal</item>
+    </string-array>
+</resources>
