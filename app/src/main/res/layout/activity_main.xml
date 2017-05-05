@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity">
+    tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.activity.MainActivity">
 
     <include android:id="@+id/score_block" layout="@layout/score_block" />
     <include android:id="@+id/content_block" layout="@layout/content_block"/>
