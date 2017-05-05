@@ -16,13 +16,14 @@
         android:layout_marginRight="@dimen/stdMargin"
         android:text="@string/submit_button"/>
 
-    <Button
-        style="@style/button"
-        android:id="@+id/btn_reset"
+    <TextView
+        style="@style/textOnPrimary"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_marginLeft="@dimen/stdMargin"
         android:layout_marginRight="@dimen/stdMargin"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         android:text="@string/reset_button"/>
 
 </LinearLayout>

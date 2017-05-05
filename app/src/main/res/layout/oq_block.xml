@@ -5,6 +5,15 @@
     tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity"
     tools:showIn="@layout/content_block"
     android:orientation="vertical"
-    style="@style/contentBlock">
+    style="@style/questionBlock">
+
+    <TextView
+        style="@style/stdText"
+        android:id="@+id/txv_oq"
+        android:text="@string/example_question" />
+
+    <EditText
+        style="@style/stdText"
+        android:id="@+id/edt_oq" />
 
 </LinearLayout>

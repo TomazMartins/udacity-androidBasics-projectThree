@@ -9,9 +9,26 @@
 
     <TextView
         style="@style/stdText"
-        android:text="@string/maq_001" />
+        android:id="@+id/xv_rwq"
+        android:text="@string/example_question"/>
 
-    <EditText
-        style="@style/stdText"/>
+    <RadioGroup
+        android:id="@+id/rdg_rwq"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/rwq_option_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/right_answer"/>
+
+        <RadioButton
+            android:id="@+id/rwq_option_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrong_answer"/>
+
+    </RadioGroup>
 
 </LinearLayout>

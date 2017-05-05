@@ -21,4 +21,6 @@
     <string name="question_in_dialog">Do you want continue?</string>
     <string name="your_score">Your score is:</string>
     <string name="std_score">0000</string>
+    <string name="example_question">Example Question</string>
+    <string name="example_option">Sample Option</string>
 </resources>

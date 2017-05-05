@@ -1,10 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity"
     tools:showIn="@layout/content_block"
-    android:orientation="vertical"
-    style="@style/contentBlock">
+    style="@style/questionBlock">
 
-</LinearLayout>
+    <TextView
+        style="@style/stdText"
+        android:id="@+id/txv_maq"
+        android:text="@string/example_question" />
+
+    <TableRow>
+        <CheckBox
+            android:id="@+id/maq_option_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/maxPadding"
+            android:text="@string/example_option"/>
+
+        <CheckBox
+            android:id="@+id/maq_option_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_option"/>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox
+            android:id="@+id/maq_option_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/maxPadding"
+            android:text="@string/example_option"/>
+
+        <CheckBox
+            android:id="@+id/maq_option_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_option"/>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox
+            android:id="@+id/maq_option_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/maxPadding"
+            android:text="@string/example_option"/>
+
+        <CheckBox
+            android:id="@+id/maq_option_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_option"/>
+    </TableRow>
+
+    <TableRow>
+        <CheckBox
+            android:id="@+id/maq_option_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/maxPadding"
+            android:text="@string/example_option"/>
+
+        <CheckBox
+            android:id="@+id/maq_option_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_option"/>
+    </TableRow>
+
+</TableLayout>

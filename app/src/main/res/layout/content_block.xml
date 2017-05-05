@@ -9,14 +9,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
-        <include android:id="@+id/question_1" layout="@layout/rwq_block"/>
-        <include android:id="@+id/question_1" layout="@layout/rwq_block"/>
-        <include android:id="@+id/question_3" layout="@layout/oq_block"/>
-        <include android:id="@+id/question_4" layout="@layout/maq_block"/>
-        <include android:id="@+id/question_5" layout="@layout/mcq_block"/>
-        <include android:id="@+id/question_6" layout="@layout/mcq_block"/>
+        <include android:id="@+id/question_1" layout="@layout/rwq_block" />
+        <include android:id="@+id/question_2" layout="@layout/rwq_block" />
+        <include android:id="@+id/question_3" layout="@layout/oq_block" />
+        <include android:id="@+id/question_4" layout="@layout/maq_block" />
+        <include android:id="@+id/question_5" layout="@layout/mcq_block" />
+        <include android:id="@+id/question_6" layout="@layout/mcq_block" />
     </LinearLayout>
 
 </ScrollView>

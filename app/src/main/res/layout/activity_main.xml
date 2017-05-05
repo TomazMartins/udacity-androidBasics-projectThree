@@ -7,8 +7,8 @@
     android:orientation="vertical"
     tools:context="br.com.udacity.androidbasics.tomazmartins.metalshow.MainActivity">
 
-    <include layout="@layout/score_block" />
-    <include layout="@layout/content_block"/>
-    <include layout="@layout/main_buttons_block" />
+    <include android:id="@+id/score_block" layout="@layout/score_block" />
+    <include android:id="@+id/content_block" layout="@layout/content_block"/>
+    <include android:id="@+id/buttons_block" layout="@layout/main_buttons_block" />
 
 </LinearLayout>
