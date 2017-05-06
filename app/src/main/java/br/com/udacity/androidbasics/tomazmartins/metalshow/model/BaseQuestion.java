@@ -1,10 +1,10 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
-public abstract class Question {
+public abstract class BaseQuestion {
     private String question;
 
-    Question( String[] data ) {
+    BaseQuestion( String[] data ) {
         setQuestion( data );
     }
 
