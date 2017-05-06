@@ -10,9 +10,13 @@ public abstract class BaseOneResponseQuestion extends BaseQuestion {
         setCorrectAnswer( data );
     }
 
-    public abstract void checkAnswer( String chosenOption );
+    public abstract boolean checkAnswer( String chosenOption );
 
-    protected void setCorrectAnswer( String[] data ) {
+    protected String getCorrectAnswer() {
+        return this.correctAnswer;
+    }
+
+    private void setCorrectAnswer( String[] data ) {
         final int ANSWER = 1;
 
         this.correctAnswer = data[ ANSWER ];
