@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
-    private List<String> options;
+    private List<String> mOptions;
 
     MultipleChoiceQuestion( String[] data ) {
         super( data );
@@ -25,7 +25,7 @@ public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
     }
 
     public List<String> getOptions() {
-        return this.options;
+        return this.mOptions;
     }
 
     private void setOptions( String[] data ) {
@@ -34,6 +34,6 @@ public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
 
         String[] arrayOptions = Arrays.copyOfRange( data, FIRST_OPTION, LAST_OPTION );
 
-        this.options = Arrays.asList( arrayOptions );
+        this.mOptions = Arrays.asList( arrayOptions );
     }
 }

@@ -2,7 +2,7 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
 public abstract class BaseOneResponseQuestion extends BaseQuestion {
-    private String correctAnswer;
+    private String mCorrectAnswer;
 
     BaseOneResponseQuestion( String[] data ) {
         super( data );
@@ -13,12 +13,12 @@ public abstract class BaseOneResponseQuestion extends BaseQuestion {
     public abstract boolean checkAnswer( String chosenOption );
 
     protected String getCorrectAnswer() {
-        return this.correctAnswer;
+        return this.mCorrectAnswer;
     }
 
     private void setCorrectAnswer( String[] data ) {
         final int ANSWER = 1;
 
-        this.correctAnswer = data[ ANSWER ];
+        this.mCorrectAnswer = data[ ANSWER ];
     }
 }
