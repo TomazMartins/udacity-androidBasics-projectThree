@@ -18,6 +18,7 @@
 
     <TextView
         style="@style/textOnPrimary"
+        android:id="@+id/btn_reset"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_marginLeft="@dimen/stdMargin"

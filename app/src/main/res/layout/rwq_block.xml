@@ -9,7 +9,7 @@
 
     <TextView
         style="@style/stdText"
-        android:id="@+id/xv_rwq"
+        android:id="@+id/txv_rwq"
         android:text="@string/example_question"/>
 
     <RadioGroup
