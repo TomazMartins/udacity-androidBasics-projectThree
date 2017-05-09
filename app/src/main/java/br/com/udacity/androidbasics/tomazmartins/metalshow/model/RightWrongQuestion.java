@@ -2,7 +2,7 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
 public class RightWrongQuestion extends BaseOneResponseQuestion {
-    RightWrongQuestion( String[] data ) {
+    public RightWrongQuestion( String[] data ) {
         super( data );
     }
 

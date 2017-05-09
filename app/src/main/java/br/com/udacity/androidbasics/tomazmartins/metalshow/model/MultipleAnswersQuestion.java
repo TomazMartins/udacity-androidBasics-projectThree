@@ -7,7 +7,7 @@ import java.util.List;
 public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
     private List<String> mOptions;
 
-    MultipleAnswersQuestion( String[] data, int qtdAnswers ) {
+    public MultipleAnswersQuestion( String[] data, int qtdAnswers ) {
         super( data, qtdAnswers );
 
         setOptions( data );
@@ -35,7 +35,7 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
 
     private void setOptions( String[] data ) {
         final int FIRST_OPTION = 1;
-        final int LAST_OPTION = data.length - 1;
+        final int LAST_OPTION = data.length;
 
         String[] arrayOptions = Arrays.copyOfRange( data, FIRST_OPTION, LAST_OPTION );
         this.mOptions = Arrays.asList( arrayOptions );

@@ -12,7 +12,6 @@
         <item>Blues</item>
         <item>Jazz</item>
         <item>Country</item>
-        <item>Pop</item>
     </string-array>
 
     <string-array name="mcq_002">
@@ -23,7 +22,6 @@
         <item name="answer">Black Sabbath</item>
 
         <item>Led Zeppelin</item>
-        <item>Deep Purple</item>
         <item>Kiss</item>
         <item>Judas Priest</item>
     </string-array>
@@ -40,6 +38,5 @@
         <item>Glam Metal</item>
         <item>Melodic Power Metal</item>
         <item>Death Metal</item>
-        <item>Doom Metal</item>
     </string-array>
 </resources>

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class OpenQuestion extends BaseMultipleResponseQuestion {
-    OpenQuestion( String[] data, int qtdAnswers ) {
+    public OpenQuestion( String[] data, int qtdAnswers ) {
         super( data, qtdAnswers );
     }
 
