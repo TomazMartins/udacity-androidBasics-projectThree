@@ -1,6 +1,8 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
+import android.util.Log;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,14 +15,17 @@ public class OpenQuestion extends BaseMultipleResponseQuestion {
 
     @Override
     public boolean checkAnswer( List<String> chosenOptions ) {
-        final int FIRST = 0;
+        this.setAnswers();
 
         boolean result = false;
 
         for( String keyword : this.getCorrectAnswers() ) {
-            if( chosenOptions.get( FIRST ).contains( keyword ) ) {
+            Log.i( "LOG", String.valueOf( getCorrectAnswers() ) );
+            if( chosenOptions.contains( keyword ) ) {
+                Log.i( "LOG", "IF" );
                 result = true;
             } else {
+                Log.i( "LOG", "ELSE" );
                 result = false;
                 break;
             }
@@ -36,7 +41,7 @@ public class OpenQuestion extends BaseMultipleResponseQuestion {
 
     private void setKeywords() {
         final int FIRST_KEYWORD = 1;
-        final int LAST_KEYWORD = this.getData().length - 1;
+        final int LAST_KEYWORD = this.getData().length;
 
         String[] arrayKeywords = Arrays.copyOfRange( this.getData(), FIRST_KEYWORD, LAST_KEYWORD );
 

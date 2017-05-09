@@ -10,7 +10,7 @@ import br.com.udacity.androidbasics.tomazmartins.metalshow.R;
 import butterknife.BindView;
 import butterknife.BindViews;
 
-public final class MultipleAnswerQuestionLayout {
+public final class MultipleAnswerQuestionLayout implements IncludedLayout {
     @BindView( R.id.txv_maq ) public TextView txv_maq;
 
     @BindViews( {R.id.maq_option_1, R.id.maq_option_2, R.id.maq_option_3, R.id.maq_option_4,

@@ -1,10 +1,15 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.activity;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Arrays;
+import java.util.Random;
 
 import br.com.udacity.androidbasics.tomazmartins.metalshow.R;
 import br.com.udacity.androidbasics.tomazmartins.metalshow.includedlayout.MultipleAnswerQuestionLayout;
@@ -17,6 +22,7 @@ import br.com.udacity.androidbasics.tomazmartins.metalshow.model.OpenQuestion;
 import br.com.udacity.androidbasics.tomazmartins.metalshow.model.RightWrongQuestion;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     @BindView( R.id.txv_total_score ) TextView txv_totalScore;
@@ -57,6 +63,34 @@ public class MainActivity extends AppCompatActivity {
         fillQuestions();
     }
 
+    @OnClick( R.id.btn_submit )
+    public void onSubmit() {
+        int radioButtonIdQuestion_1 = question_1Layout.rdg_rwq.getCheckedRadioButtonId();
+        question_1Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_1 );
+        String resultQuestion_1 = question_1Layout.rwq_option_1.getText().toString().toUpperCase();
+        boolean a = rightWrongQuestion_1.checkAnswer( resultQuestion_1 );
+
+        int radioButtonIdQuestion_2 = question_2Layout.rdg_rwq.getCheckedRadioButtonId();
+        question_2Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_2 );
+        String resultQuestion_2 = question_2Layout.rwq_option_1.getText().toString().toUpperCase();
+        boolean b = rightWrongQuestion_2.checkAnswer( resultQuestion_2 );
+
+        String resultQuestion_3 = question_3Layout.edt_oq.getText().toString();
+        boolean c = openQuestion.checkAnswer( Arrays.asList( resultQuestion_3.split( " " ) ) );
+
+        int radioButtonIdQuestion_5 = question_5Layout.rdg_mcq.getCheckedRadioButtonId();
+        question_5Layout.mcq_option = ButterKnife.findById( question_5, radioButtonIdQuestion_5 );
+        String resultQuestion_5 = question_5Layout.mcq_option.getText().toString();
+        boolean e = multipleChoiceQuestion_1.checkAnswer( resultQuestion_5 );
+
+        int radioButtonIdQuestion_6 = question_6Layout.rdg_mcq.getCheckedRadioButtonId();
+        question_6Layout.mcq_option = ButterKnife.findById( question_6, radioButtonIdQuestion_6 );
+        String resultQuestion_6 = question_6Layout.mcq_option.getText().toString();
+        boolean f = multipleChoiceQuestion_2.checkAnswer( resultQuestion_6 );
+
+        Toast.makeText( this, ""+a+" "+b+" "+c+" "+e+" "+f, Toast.LENGTH_SHORT ).show();
+    }
+
     private void fillQuestions() {
         fillQuestion_1();
         fillQuestion_2();
@@ -67,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_1() {
-        String[] data = getResources().getStringArray( R.array.rwq_001 );
+        String[] data = getSomeQuestion( R.array.right_wrong_questions );
 
         rightWrongQuestion_1.setData( data );
 
@@ -75,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_2() {
-        String[] data = getResources().getStringArray( R.array.rwq_002 );
+        String[] data = getSomeQuestion( R.array.right_wrong_questions );
 
         rightWrongQuestion_2.setData( data );
 
@@ -83,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_3() {
-        String[] data = getResources().getStringArray( R.array.oq_001 );
+        String[] data = getSomeQuestion( R.array.open_questions );
 
         openQuestion.setData( data );
 
@@ -91,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_4() {
-        String[] data = getResources().getStringArray( R.array.maq_001 );
+        String[] data = getSomeQuestion( R.array.multiple_answer_questions );
 
         multipleAnswersQuestion.setData( data );
         multipleAnswersQuestion.setOptions();
@@ -107,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_5() {
-        String[] data = getResources().getStringArray( R.array.mcq_001 );
+        String[] data = getSomeQuestion( R.array.multiple_choice_questions );
 
         multipleChoiceQuestion_1.setData( data );
         multipleChoiceQuestion_1.setOptions();
@@ -123,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestion_6() {
-        String[] data = getResources().getStringArray( R.array.mcq_002 );
+        String[] data = getSomeQuestion( R.array.multiple_choice_questions );
 
         multipleChoiceQuestion_2.setData( data );
         multipleChoiceQuestion_2.setOptions();
@@ -136,6 +170,29 @@ public class MainActivity extends AppCompatActivity {
             String text = multipleChoiceQuestion_2.getOptions().get( i );
             question_6Layout.options.get( i ).setText( text );
         }
+    }
+
+    private String[] getSomeQuestion( int resourceId ) {
+        TypedArray resultArray = getResources()
+                .obtainTypedArray( resourceId );
+
+        int size = resultArray.length();
+
+        String[][] questions = new String [ size ][];
+
+        for( int i = 0; i < size; ++i ) {
+            int id = resultArray.getResourceId( i, 0 );
+
+            if( id > 0 ) {
+                questions[ i ] = getResources().getStringArray( id );
+            }
+        }
+
+        resultArray.recycle();
+
+        Random random = new Random();
+
+        return questions[ random.nextInt( size ) ];
     }
 
     private void bindComponentsIncludedLayouts() {
