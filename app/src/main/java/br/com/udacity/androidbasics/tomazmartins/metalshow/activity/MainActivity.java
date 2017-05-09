@@ -15,6 +15,7 @@ import br.com.udacity.androidbasics.tomazmartins.metalshow.includedlayout.RightW
 import br.com.udacity.androidbasics.tomazmartins.metalshow.model.MultipleAnswersQuestion;
 import br.com.udacity.androidbasics.tomazmartins.metalshow.model.MultipleChoiceQuestion;
 import br.com.udacity.androidbasics.tomazmartins.metalshow.model.OpenQuestion;
+import br.com.udacity.androidbasics.tomazmartins.metalshow.model.RightWrongQuestion;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -51,10 +52,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillQuestions() {
+        fillQuestion_1();
+        fillQuestion_2();
         fillQuestion_3();
         fillQuestion_4();
         fillQuestion_5();
         fillQuestion_6();
+    }
+
+    private void fillQuestion_1() {
+        String[] data = getResources().getStringArray( R.array.rwq_001 );
+
+        RightWrongQuestion question = new RightWrongQuestion( data );
+
+        question_1Layout.txv_rwq.setText( question.getQuestion() );
+    }
+
+    private void fillQuestion_2() {
+        String[] data = getResources().getStringArray( R.array.rwq_002 );
+
+        RightWrongQuestion question = new RightWrongQuestion( data );
+
+        question_2Layout.txv_rwq.setText( question.getQuestion() );
     }
 
     private void fillQuestion_3() {

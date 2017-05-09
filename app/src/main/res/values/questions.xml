@@ -18,5 +18,7 @@
     </array>
 
     <array name="right_wrong_questions">
+        <item>@array/rwq_001</item>
+        <item>@array/rwq_002</item>
     </array>
 </resources>

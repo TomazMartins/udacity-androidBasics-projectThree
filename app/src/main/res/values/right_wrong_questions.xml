@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="rwq_001">
+        <item name="question">The name of the Black Sabbath\'s second album is Mater of Reality.</item>
+        <item name="answer">WRONG</item>
+    </string-array>
+
+    <string-array name="rwq_002">
+        <item name="question">
+            Riff is a musical fundamental of Heavy Metal. These melodic figures  are used to help
+            to create themed hooks.
+        </item>
+        <item name="answer">RIGHT</item>
+    </string-array>
 </resources>
