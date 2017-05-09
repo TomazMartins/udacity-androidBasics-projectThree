@@ -5,16 +5,21 @@ import java.util.List;
 
 public abstract class BaseMultipleResponseQuestion extends BaseQuestion {
     private List<String> mCorrectAnswers;
+    private int mQtdAnswers;
 
-    BaseMultipleResponseQuestion( String[] data, int qtdAnswers ) {
-        super( data );
+    BaseMultipleResponseQuestion( int qtdAnswers ) {
+        super();
 
-        setAnswers( data, qtdAnswers );
+        this.mQtdAnswers = qtdAnswers;
     }
 
     public abstract boolean checkAnswer( List<String> chosenOptions );
 
-    protected abstract void setAnswers( String[] data, int qtdAnswers );
+    protected abstract void setAnswers();
+
+    protected int getQtdAnswers() {
+        return this.mQtdAnswers;
+    }
 
     protected List<String> getCorrectAnswers() {
         return this.mCorrectAnswers;

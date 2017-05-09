@@ -3,19 +3,29 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 public abstract class BaseQuestion {
     private String mQuestion;
+    private String[] mData;
 
-    BaseQuestion( String[] data ) {
-        setQuestion( data );
+    BaseQuestion() {
     }
 
     public String getQuestion() {
         return this.mQuestion;
     }
 
-    private void setQuestion( String[] data ) {
+    public void setData( String[] data ) {
+        this.mData = data;
+
+        setQuestion();
+    }
+
+    protected String[] getData() {
+        return mData;
+    }
+
+    private void setQuestion() {
         final int QUESTION = 0;
 
-        this.mQuestion = data[ QUESTION ];
+        this.mQuestion = this.getData()[ QUESTION ];
     }
 }
 

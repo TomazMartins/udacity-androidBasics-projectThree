@@ -4,9 +4,11 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.R.attr.data;
+
 public class OpenQuestion extends BaseMultipleResponseQuestion {
-    public OpenQuestion( String[] data, int qtdAnswers ) {
-        super( data, qtdAnswers );
+    public OpenQuestion( int qtdAnswers ) {
+        super( qtdAnswers );
     }
 
     @Override
@@ -28,15 +30,15 @@ public class OpenQuestion extends BaseMultipleResponseQuestion {
     }
 
     @Override
-    protected void setAnswers( String[] data, int qtdAnswers ) {
-        setKeywords( data );
+    protected void setAnswers() {
+        setKeywords();
     }
 
-    private void setKeywords( String[] data ) {
+    private void setKeywords() {
         final int FIRST_KEYWORD = 1;
-        final int LAST_KEYWORD = data.length - 1;
+        final int LAST_KEYWORD = this.getData().length - 1;
 
-        String[] arrayKeywords = Arrays.copyOfRange( data, FIRST_KEYWORD, LAST_KEYWORD );
+        String[] arrayKeywords = Arrays.copyOfRange( this.getData(), FIRST_KEYWORD, LAST_KEYWORD );
 
         this.setCorrectAnswers( Arrays.asList( arrayKeywords ) );
     }

@@ -4,17 +4,19 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 import java.util.Arrays;
 import java.util.List;
 
+import static android.R.attr.data;
+
 public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
     private List<String> mOptions;
 
-    public MultipleChoiceQuestion( String[] data ) {
-        super( data );
-
-        setOptions( data );
+    public MultipleChoiceQuestion() {
+        super();
     }
 
     @Override
     public boolean checkAnswer( String chosenOption ) {
+        this.setCorrectAnswer();
+
         boolean result = false;
 
         if( getCorrectAnswer().equals( chosenOption ) ) {
@@ -28,11 +30,11 @@ public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
         return this.mOptions;
     }
 
-    private void setOptions( String[] data ) {
+    public void setOptions() {
         final int FIRST_OPTION = 1;
-        final int LAST_OPTION = data.length;
+        final int LAST_OPTION = this.getData().length;
 
-        String[] arrayOptions = Arrays.copyOfRange( data, FIRST_OPTION, LAST_OPTION );
+        String[] arrayOptions = Arrays.copyOfRange( this.getData(), FIRST_OPTION, LAST_OPTION );
 
         this.mOptions = Arrays.asList( arrayOptions );
     }
