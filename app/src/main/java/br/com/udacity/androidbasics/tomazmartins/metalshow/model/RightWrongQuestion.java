@@ -1,8 +1,6 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
-import static android.R.attr.data;
-
 public class RightWrongQuestion extends BaseOneResponseQuestion {
     public RightWrongQuestion() {
         super();
@@ -14,8 +12,10 @@ public class RightWrongQuestion extends BaseOneResponseQuestion {
 
         boolean result = false;
 
-        if( getCorrectAnswer().equals( chosenOption ) ) {
-            result = true;
+        if( chosenOption != null ) {
+            if( getCorrectAnswer().equals( chosenOption ) ) {
+                result = true;
+            }
         }
 
         return result;

@@ -136,7 +136,14 @@ public class MainActivity extends AppCompatActivity {
 
         question_1Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_1 );
 
-        String resultQuestion_1 = question_1Layout.rwq_option_1.getText().toString().toUpperCase();
+        String resultQuestion_1 = null;
+
+        if( question_1Layout.rwq_option_1 != null ) {
+            resultQuestion_1 = question_1Layout.rwq_option_1
+                    .getText()
+                    .toString()
+                    .toUpperCase();
+        }
 
         return rightWrongQuestion_1.checkAnswer( resultQuestion_1 );
     }
@@ -146,7 +153,14 @@ public class MainActivity extends AppCompatActivity {
 
         question_1Layout.rwq_option_2 = ButterKnife.findById( question_2, radioButtonIdQuestion_2 );
 
-        String resultQuestion_2 = question_2Layout.rwq_option_2.getText().toString().toUpperCase();
+        String resultQuestion_2 = null;
+
+        if( question_2Layout.rwq_option_2 != null ) {
+            resultQuestion_2 = question_2Layout.rwq_option_2
+                    .getText()
+                    .toString()
+                    .toUpperCase();
+        }
 
         return rightWrongQuestion_2.checkAnswer( resultQuestion_2 );
     }
@@ -165,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         boolean ckb_6 = question_4Layout.options.get( 5 ).isChecked();
         boolean ckb_7 = question_4Layout.options.get( 6 ).isChecked();
         boolean ckb_8 = question_4Layout.options.get( 7 ).isChecked();
+
         List<Boolean> checkboxes = new ArrayList<>();
         checkboxes.add( ckb_1 );
         checkboxes.add( ckb_2 );
@@ -174,12 +189,15 @@ public class MainActivity extends AppCompatActivity {
         checkboxes.add( ckb_6 );
         checkboxes.add( ckb_7 );
         checkboxes.add( ckb_8 );
+
         List<String> resultQuestion_4 = new ArrayList<>();
+
         for( int i = 0; i < checkboxes.size(); ++i ) {
             if( checkboxes.get( i ) ) {
                 resultQuestion_4.add( question_4Layout.options.get( i ).getText().toString() );
             }
         }
+
         return multipleAnswersQuestion.checkAnswer( resultQuestion_4 );
     }
 
@@ -188,15 +206,30 @@ public class MainActivity extends AppCompatActivity {
 
         question_5Layout.mcq_option = ButterKnife.findById( question_5, radioButtonIdQuestion_5 );
 
-        String resultQuestion_5 = question_5Layout.mcq_option.getText().toString();
+        String resultQuestion_5 = null;
+
+        if( question_5Layout.mcq_option != null ) {
+            resultQuestion_5 = question_5Layout.mcq_option
+                    .getText()
+                    .toString();
+        }
 
         return multipleChoiceQuestion_1.checkAnswer( resultQuestion_5 );
     }
 
     private boolean checkQuestion_6() {
         int radioButtonIdQuestion_6 = question_6Layout.rdg_mcq.getCheckedRadioButtonId();
+
         question_6Layout.mcq_option = ButterKnife.findById( question_6, radioButtonIdQuestion_6 );
-        String resultQuestion_6 = question_6Layout.mcq_option.getText().toString();
+
+        String resultQuestion_6 = null;
+
+        if( question_6Layout.mcq_option != null ) {
+            resultQuestion_6 = question_6Layout.mcq_option
+                    .getText()
+                    .toString();
+        }
+
         return multipleChoiceQuestion_2.checkAnswer( resultQuestion_6 );
     }
 

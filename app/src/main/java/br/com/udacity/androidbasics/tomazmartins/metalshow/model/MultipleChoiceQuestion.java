@@ -19,8 +19,10 @@ public class MultipleChoiceQuestion extends BaseOneResponseQuestion {
 
         boolean result = false;
 
-        if( getCorrectAnswer().equals( chosenOption ) ) {
-            result = true;
+        if( chosenOption != null ) {
+            if( getCorrectAnswer().equals( chosenOption ) ) {
+                result = true;
+            }
         }
 
         return result;
