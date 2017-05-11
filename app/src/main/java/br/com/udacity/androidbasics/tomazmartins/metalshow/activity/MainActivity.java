@@ -26,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static br.com.udacity.androidbasics.tomazmartins.metalshow.R.string.score;
+
 public class MainActivity extends AppCompatActivity {
     @BindView( R.id.txv_total_score ) TextView txv_totalScore;
     @BindView( R.id.btn_submit ) AppCompatButton btn_submit;
@@ -67,18 +69,56 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick( R.id.btn_submit )
     public void onSubmit() {
-        checkAnswers();
+        int qtdCorrectAnswers = checkAnswers();
+        score += calculateScore( qtdCorrectAnswers );
+        updateScore( score );
     }
 
-    private void checkAnswers() {
-        boolean a = checkQuestion_1();
-        boolean b = checkQuestion_2();
-        boolean c = checkQuestion_3();
-        boolean d = checkQuestion_4();
-        boolean e = checkQuestion_5();
-        boolean f = checkQuestion_6();
+    private void updateScore( int score ) {
+        txv_totalScore.setText( String.valueOf( score ) );
+    }
 
-        Toast.makeText( this, ""+a+" "+b+" "+c+" "+d+" "+e+" "+f, Toast.LENGTH_SHORT ).show();
+    private int calculateScore( int qtdCorrectAnswers ) {
+        return qtdCorrectAnswers * 10;
+    }
+
+    private int checkAnswers() {
+        List<Boolean> checksOfCorrectAnswers = new ArrayList<>();
+
+        boolean isCorrectQuestion_1 = checkQuestion_1();
+        checksOfCorrectAnswers.add( isCorrectQuestion_1 );
+
+        boolean isCorrectQuestion_2 = checkQuestion_2();
+        checksOfCorrectAnswers.add( isCorrectQuestion_2 );
+
+        boolean isCorrectQuestion_3 = checkQuestion_3();
+        checksOfCorrectAnswers.add( isCorrectQuestion_3 );
+
+        boolean isCorrectQuestion_4 = checkQuestion_4();
+        checksOfCorrectAnswers.add( isCorrectQuestion_4 );
+
+        boolean isCorrectQuestion_5 = checkQuestion_5();
+        checksOfCorrectAnswers.add( isCorrectQuestion_5 );
+
+        boolean isCorrectQuestion_6 = checkQuestion_6();
+        checksOfCorrectAnswers.add( isCorrectQuestion_6 );
+
+        int qtdCorrectAnswers = 0;
+
+        for( Boolean isCorrect : checksOfCorrectAnswers ) {
+            if( isCorrect ) {
+                ++qtdCorrectAnswers;
+            }
+        }
+
+        Toast.makeText( this, ""+isCorrectQuestion_1+
+                " "+isCorrectQuestion_2+
+                " "+isCorrectQuestion_3+
+                " "+isCorrectQuestion_4+
+                " "+isCorrectQuestion_5+
+                " "+isCorrectQuestion_6, Toast.LENGTH_SHORT ).show();
+
+        return qtdCorrectAnswers;
     }
 
     private boolean checkQuestion_1() {
