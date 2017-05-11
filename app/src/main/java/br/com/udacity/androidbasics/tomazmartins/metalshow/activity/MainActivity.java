@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -315,11 +314,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void reset() {
-        question_1Layout.rwq_option_1.setChecked( false );
-        question_1Layout.rwq_option_2.setChecked( false );
-
-        question_2Layout.rwq_option_1.setChecked( false );
-        question_2Layout.rwq_option_2.setChecked( false );
+        question_1Layout.rdg_rwq.clearCheck();
+        question_2Layout.rdg_rwq.clearCheck();
 
         question_3Layout.edt_oq.setText( "" );
 
@@ -327,12 +323,7 @@ public class MainActivity extends AppCompatActivity {
             ckb.setChecked( false );
         }
 
-        for( RadioButton rdb : question_5Layout.options ) {
-            rdb.setChecked( false );
-        }
-
-        for( RadioButton rdb : question_6Layout.options ) {
-            rdb.setChecked( false );
-        }
+        question_5Layout.rdg_mcq.clearCheck();
+        question_6Layout.rdg_mcq.clearCheck();
     }
 }
