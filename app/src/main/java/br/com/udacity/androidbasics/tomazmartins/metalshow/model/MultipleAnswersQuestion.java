@@ -1,16 +1,16 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
+import android.util.Log;
+
 import java.util.Arrays;
 import java.util.List;
-
-import static android.R.attr.data;
 
 public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
     private List<String> mOptions;
 
-    public MultipleAnswersQuestion( int qtdAnswers ) {
-        super( qtdAnswers );
+    public MultipleAnswersQuestion() {
+        super();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
     }
 
     public void setOptions() {
-        final int FIRST_OPTION = 1;
+        final int FIRST_OPTION = 2;
         final int LAST_OPTION = this.getData().length;
 
         String[] arrayOptions = Arrays.copyOfRange( this.getData(), FIRST_OPTION, LAST_OPTION );
@@ -49,8 +49,22 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
 
     @Override
     protected void setAnswers() {
-        String[] arrayAnswers = Arrays.copyOfRange( this.getData(), 1, this.getQtdAnswers() );
+        final int QTD_ANSWERS = 1;
 
-        setCorrectAnswers( Arrays.asList( arrayAnswers ) );
+        int qtdAnswers = Integer.parseInt( this.getData()[ QTD_ANSWERS ] );
+        this.setQtdAnswers( qtdAnswers );
+
+        String[] arrayAnswers = Arrays.copyOfRange(
+                this.getData(),
+                FIRST_RESPONSE,
+                this.getPositionOfLastAnswer()
+        );
+
+        Log.i( "LOG", String.valueOf( this.getPositionOfLastAnswer() ) );
+        for( String answer : arrayAnswers ) {
+            Log.i( "LOG", answer );
+        }
+
+        this.setCorrectAnswers( Arrays.asList( arrayAnswers ) );
     }
 }

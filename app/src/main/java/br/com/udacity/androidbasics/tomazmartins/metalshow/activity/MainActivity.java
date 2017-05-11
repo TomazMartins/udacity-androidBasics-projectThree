@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RightWrongQuestion rightWrongQuestion_1 = new RightWrongQuestion();
     private RightWrongQuestion rightWrongQuestion_2 = new RightWrongQuestion();
-    private OpenQuestion openQuestion = new OpenQuestion( 4 );
-    private MultipleAnswersQuestion multipleAnswersQuestion = new MultipleAnswersQuestion( 5 );
+    private OpenQuestion openQuestion = new OpenQuestion();
+    private MultipleAnswersQuestion multipleAnswersQuestion = new MultipleAnswersQuestion();
     private MultipleChoiceQuestion multipleChoiceQuestion_1 = new MultipleChoiceQuestion();
     private MultipleChoiceQuestion multipleChoiceQuestion_2 = new MultipleChoiceQuestion();
 
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick( R.id.btn_submit )
     public void onSubmit() {
         int qtdCorrectAnswers = checkQuestions();
+
         score += calculateScore( qtdCorrectAnswers );
         updateScore( score );
 

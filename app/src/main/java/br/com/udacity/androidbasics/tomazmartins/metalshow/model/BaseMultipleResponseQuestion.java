@@ -4,21 +4,25 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 import java.util.List;
 
 public abstract class BaseMultipleResponseQuestion extends BaseQuestion {
+    protected final int FIRST_RESPONSE = 2;
+
     private List<String> mCorrectAnswers;
     private int mQtdAnswers;
 
-    BaseMultipleResponseQuestion( int qtdAnswers ) {
+    BaseMultipleResponseQuestion() {
         super();
-
-        this.mQtdAnswers = qtdAnswers;
     }
 
     public abstract boolean checkAnswer( List<String> chosenOptions );
 
     protected abstract void setAnswers();
 
-    protected int getQtdAnswers() {
-        return this.mQtdAnswers;
+    protected void setQtdAnswers( int qtd ) {
+        this.mQtdAnswers = qtd;
+    }
+
+    protected int getPositionOfLastAnswer() {
+        return (this.mQtdAnswers + 2);
     }
 
     protected List<String> getCorrectAnswers() {

@@ -5,6 +5,7 @@
             Which bands are part of the so-called Big four, in Thrash Metal?
         </item>
 
+        <item name="qtd-answers">4</item>
         <item name="answer">Metallica</item>
         <item name="answer">Slayer</item>
         <item name="answer">Megadeth</item>
@@ -21,6 +22,7 @@
             What are the 3 bands that, in the late 80\'s, created Melodic Power Metal?
         </item>
 
+        <item name="qtd-answers">3</item>
         <item name="answer">Helloween</item>
         <item name="answer">Blind Guardian</item>
         <item name="answer">Stratovarius</item>

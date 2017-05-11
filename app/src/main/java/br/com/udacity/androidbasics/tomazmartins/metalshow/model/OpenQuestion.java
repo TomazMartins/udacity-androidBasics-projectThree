@@ -1,16 +1,12 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
-import android.util.Log;
-
 import java.util.Arrays;
 import java.util.List;
 
-import static android.R.attr.data;
-
 public class OpenQuestion extends BaseMultipleResponseQuestion {
-    public OpenQuestion( int qtdAnswers ) {
-        super( qtdAnswers );
+    public OpenQuestion() {
+        super();
     }
 
     @Override
@@ -37,10 +33,16 @@ public class OpenQuestion extends BaseMultipleResponseQuestion {
     }
 
     private void setKeywords() {
-        final int FIRST_KEYWORD = 1;
-        final int LAST_KEYWORD = this.getData().length;
+        final int QTD_ANSWERS = 1;
 
-        String[] arrayKeywords = Arrays.copyOfRange( this.getData(), FIRST_KEYWORD, LAST_KEYWORD );
+        int qtdAnswers = Integer.parseInt( this.getData()[ QTD_ANSWERS ] );
+        this.setQtdAnswers( qtdAnswers );
+
+        String[] arrayKeywords = Arrays.copyOfRange(
+                this.getData(),
+                FIRST_RESPONSE,
+                this.getPositionOfLastAnswer()
+        );
 
         this.setCorrectAnswers( Arrays.asList( arrayKeywords ) );
     }

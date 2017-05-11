@@ -5,6 +5,7 @@
             What is the origin of the famous salutation of Heavy Metal, the \"Horns up\"?
         </item>
 
+        <item name="qtd-keywords">5</item>
         <item>James</item>
         <item>Dio</item>
         <item>away</item>
@@ -16,6 +17,7 @@
     <string-array name="oq_002">
         <item name="question">What is mean Headbanger?</item>
 
+        <item name="qtd-keywords">2</item>
         <item>fan</item>
         <item>metal</item>
     </string-array>
@@ -23,6 +25,7 @@
     <string-array name="oq_003">
         <item name="question">What is mean NWOBHM?</item>
 
+        <item name="qtd-keywords">6</item>
         <item>New</item>
         <item>Wave</item>
         <item>Of</item>
