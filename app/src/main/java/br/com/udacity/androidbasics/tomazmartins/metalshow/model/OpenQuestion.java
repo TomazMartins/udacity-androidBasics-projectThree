@@ -20,12 +20,9 @@ public class OpenQuestion extends BaseMultipleResponseQuestion {
         boolean result = false;
 
         for( String keyword : this.getCorrectAnswers() ) {
-            Log.i( "LOG", String.valueOf( getCorrectAnswers() ) );
             if( chosenOptions.contains( keyword ) ) {
-                Log.i( "LOG", "IF" );
                 result = true;
             } else {
-                Log.i( "LOG", "ELSE" );
                 result = false;
                 break;
             }

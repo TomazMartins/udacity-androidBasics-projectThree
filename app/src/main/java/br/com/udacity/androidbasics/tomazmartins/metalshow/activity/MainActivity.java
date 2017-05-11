@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import br.com.udacity.androidbasics.tomazmartins.metalshow.R;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private RightWrongQuestion rightWrongQuestion_1 = new RightWrongQuestion();
     private RightWrongQuestion rightWrongQuestion_2 = new RightWrongQuestion();
     private OpenQuestion openQuestion = new OpenQuestion( 4 );
-    private MultipleAnswersQuestion multipleAnswersQuestion = new MultipleAnswersQuestion( 4 );
+    private MultipleAnswersQuestion multipleAnswersQuestion = new MultipleAnswersQuestion( 5 );
     private MultipleChoiceQuestion multipleChoiceQuestion_1 = new MultipleChoiceQuestion();
     private MultipleChoiceQuestion multipleChoiceQuestion_2 = new MultipleChoiceQuestion();
 
@@ -65,30 +67,87 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick( R.id.btn_submit )
     public void onSubmit() {
+        checkAnswers();
+    }
+
+    private void checkAnswers() {
+        boolean a = checkQuestion_1();
+        boolean b = checkQuestion_2();
+        boolean c = checkQuestion_3();
+        boolean d = checkQuestion_4();
+        boolean e = checkQuestion_5();
+        boolean f = checkQuestion_6();
+
+        Toast.makeText( this, ""+a+" "+b+" "+c+" "+d+" "+e+" "+f, Toast.LENGTH_SHORT ).show();
+    }
+
+    private boolean checkQuestion_1() {
         int radioButtonIdQuestion_1 = question_1Layout.rdg_rwq.getCheckedRadioButtonId();
+
         question_1Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_1 );
+
         String resultQuestion_1 = question_1Layout.rwq_option_1.getText().toString().toUpperCase();
-        boolean a = rightWrongQuestion_1.checkAnswer( resultQuestion_1 );
 
+        return rightWrongQuestion_1.checkAnswer( resultQuestion_1 );
+    }
+
+    private boolean checkQuestion_2() {
         int radioButtonIdQuestion_2 = question_2Layout.rdg_rwq.getCheckedRadioButtonId();
-        question_2Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_2 );
-        String resultQuestion_2 = question_2Layout.rwq_option_1.getText().toString().toUpperCase();
-        boolean b = rightWrongQuestion_2.checkAnswer( resultQuestion_2 );
 
+        question_1Layout.rwq_option_2 = ButterKnife.findById( question_2, radioButtonIdQuestion_2 );
+
+        String resultQuestion_2 = question_2Layout.rwq_option_2.getText().toString().toUpperCase();
+
+        return rightWrongQuestion_2.checkAnswer( resultQuestion_2 );
+    }
+
+    private boolean checkQuestion_3() {
         String resultQuestion_3 = question_3Layout.edt_oq.getText().toString();
-        boolean c = openQuestion.checkAnswer( Arrays.asList( resultQuestion_3.split( " " ) ) );
+        return openQuestion.checkAnswer( Arrays.asList( resultQuestion_3.split( " " ) ) );
+    }
 
+    private boolean checkQuestion_4() {
+        boolean ckb_1 = question_4Layout.options.get( 0 ).isChecked();
+        boolean ckb_2 = question_4Layout.options.get( 1 ).isChecked();
+        boolean ckb_3 = question_4Layout.options.get( 2 ).isChecked();
+        boolean ckb_4 = question_4Layout.options.get( 3 ).isChecked();
+        boolean ckb_5 = question_4Layout.options.get( 4 ).isChecked();
+        boolean ckb_6 = question_4Layout.options.get( 5 ).isChecked();
+        boolean ckb_7 = question_4Layout.options.get( 6 ).isChecked();
+        boolean ckb_8 = question_4Layout.options.get( 7 ).isChecked();
+        List<Boolean> checkboxes = new ArrayList<>();
+        checkboxes.add( ckb_1 );
+        checkboxes.add( ckb_2 );
+        checkboxes.add( ckb_3 );
+        checkboxes.add( ckb_4 );
+        checkboxes.add( ckb_5 );
+        checkboxes.add( ckb_6 );
+        checkboxes.add( ckb_7 );
+        checkboxes.add( ckb_8 );
+        List<String> resultQuestion_4 = new ArrayList<>();
+        for( int i = 0; i < checkboxes.size(); ++i ) {
+            if( checkboxes.get( i ) ) {
+                resultQuestion_4.add( question_4Layout.options.get( i ).getText().toString() );
+            }
+        }
+        return multipleAnswersQuestion.checkAnswer( resultQuestion_4 );
+    }
+
+    private  boolean checkQuestion_5() {
         int radioButtonIdQuestion_5 = question_5Layout.rdg_mcq.getCheckedRadioButtonId();
-        question_5Layout.mcq_option = ButterKnife.findById( question_5, radioButtonIdQuestion_5 );
-        String resultQuestion_5 = question_5Layout.mcq_option.getText().toString();
-        boolean e = multipleChoiceQuestion_1.checkAnswer( resultQuestion_5 );
 
+        question_5Layout.mcq_option = ButterKnife.findById( question_5, radioButtonIdQuestion_5 );
+
+        String resultQuestion_5 = question_5Layout.mcq_option.getText().toString();
+
+        return multipleChoiceQuestion_1.checkAnswer( resultQuestion_5 );
+    }
+
+    private boolean checkQuestion_6() {
         int radioButtonIdQuestion_6 = question_6Layout.rdg_mcq.getCheckedRadioButtonId();
         question_6Layout.mcq_option = ButterKnife.findById( question_6, radioButtonIdQuestion_6 );
         String resultQuestion_6 = question_6Layout.mcq_option.getText().toString();
-        boolean f = multipleChoiceQuestion_2.checkAnswer( resultQuestion_6 );
-
-        Toast.makeText( this, ""+a+" "+b+" "+c+" "+e+" "+f, Toast.LENGTH_SHORT ).show();
+        return multipleChoiceQuestion_2.checkAnswer( resultQuestion_6 );
     }
 
     private void fillQuestions() {

@@ -19,13 +19,17 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
 
         boolean result = false;
 
-        for( String answer : this.getCorrectAnswers() ) {
-            if( chosenOptions.contains( answer ) ) {
-                result = true;
-            } else {
-                result = false;
-                break;
+        if( chosenOptions.size() == this.getCorrectAnswers().size() ) {
+            for( String answer : this.getCorrectAnswers() ) {
+                if( chosenOptions.contains( answer ) ) {
+                    result = true;
+                } else {
+                    result = false;
+                    break;
+                }
             }
+        } else {
+            result = false;
         }
 
         return result;
