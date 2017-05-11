@@ -3,7 +3,10 @@ package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
@@ -45,6 +48,14 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
 
         String[] arrayOptions = Arrays.copyOfRange( this.getData(), FIRST_OPTION, LAST_OPTION );
         this.mOptions = Arrays.asList( arrayOptions );
+    }
+
+    public List<String> shuffleOptions() {
+        List<String> shuffledOptions = new ArrayList<>();
+        shuffledOptions.addAll( this.getOptions() );
+        Collections.shuffle( shuffledOptions );
+
+        return shuffledOptions;
     }
 
     @Override

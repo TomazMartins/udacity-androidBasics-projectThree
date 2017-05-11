@@ -276,8 +276,10 @@ public class MainActivity extends AppCompatActivity {
 
         int size = multipleAnswersQuestion.getOptions().size();
 
+        List<String> options = multipleAnswersQuestion.shuffleOptions();
+
         for( int i = 0; i < size; ++i ) {
-            String text = multipleAnswersQuestion.getOptions().get( i );
+            String text = options.get( i );
             question_4Layout.options.get( i ).setText( text );
         }
     }
@@ -292,8 +294,10 @@ public class MainActivity extends AppCompatActivity {
 
         int size = multipleChoiceQuestion_1.getOptions().size();
 
+        List<String> options = multipleChoiceQuestion_1.shuffleOptions();
+
         for( int i = 0; i < size; ++i ) {
-            String text = multipleChoiceQuestion_1.getOptions().get( i );
+            String text = options.get( i );
             question_5Layout.options.get( i ).setText( text );
         }
     }
@@ -308,8 +312,10 @@ public class MainActivity extends AppCompatActivity {
 
         int size = multipleChoiceQuestion_2.getOptions().size();
 
+        List<String> options = multipleChoiceQuestion_2.shuffleOptions();
+
         for( int i = 0; i < size; ++i ) {
-            String text = multipleChoiceQuestion_2.getOptions().get( i );
+            String text = options.get( i );
             question_6Layout.options.get( i ).setText( text );
         }
     }
