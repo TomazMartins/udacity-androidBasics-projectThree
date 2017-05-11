@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
     private MultipleChoiceQuestion multipleChoiceQuestion_1 = new MultipleChoiceQuestion();
     private MultipleChoiceQuestion multipleChoiceQuestion_2 = new MultipleChoiceQuestion();
 
-    private int score;
+    private int totalScore;
+    private int currentScore;
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
@@ -64,17 +66,27 @@ public class MainActivity extends AppCompatActivity {
         bindComponentsIncludedLayouts();
 
         fillQuestions();
+
+        totalScore = 0;
+        currentScore = 0;
     }
 
     @OnClick( R.id.btn_submit )
     public void onSubmit() {
         int qtdCorrectAnswers = checkQuestions();
 
-        score += calculateScore( qtdCorrectAnswers );
-        updateScore( score );
+        currentScore = calculateScore( qtdCorrectAnswers );
+        totalScore += currentScore;
+        updateScore( totalScore );
 
         fillQuestions();
         reset();
+
+        Toast.makeText(
+                this,
+                getResources().getString( R.string.your_score ) + " " + currentScore,
+                Toast.LENGTH_SHORT
+        ).show();
     }
 
     @OnClick( R.id.btn_reset )
@@ -121,25 +133,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        Toast.makeText( this, ""+isCorrectQuestion_1+
-                " "+isCorrectQuestion_2+
-                " "+isCorrectQuestion_3+
-                " "+isCorrectQuestion_4+
-                " "+isCorrectQuestion_5+
-                " "+isCorrectQuestion_6, Toast.LENGTH_SHORT ).show();
-
         return qtdCorrectAnswers;
     }
 
     private boolean checkQuestion_1() {
         int radioButtonIdQuestion_1 = question_1Layout.rdg_rwq.getCheckedRadioButtonId();
 
-        question_1Layout.rwq_option_1 = ButterKnife.findById( question_1, radioButtonIdQuestion_1 );
-
+        RadioButton rwq_option = ButterKnife.findById( question_1, radioButtonIdQuestion_1 );
         String resultQuestion_1 = null;
 
-        if( question_1Layout.rwq_option_1 != null ) {
-            resultQuestion_1 = question_1Layout.rwq_option_1
+        if( rwq_option != null ) {
+            resultQuestion_1 = rwq_option
                     .getText()
                     .toString()
                     .toUpperCase();
@@ -151,12 +155,11 @@ public class MainActivity extends AppCompatActivity {
     private boolean checkQuestion_2() {
         int radioButtonIdQuestion_2 = question_2Layout.rdg_rwq.getCheckedRadioButtonId();
 
-        question_1Layout.rwq_option_2 = ButterKnife.findById( question_2, radioButtonIdQuestion_2 );
-
+        RadioButton rwq_option = ButterKnife.findById( question_2, radioButtonIdQuestion_2 );
         String resultQuestion_2 = null;
 
-        if( question_2Layout.rwq_option_2 != null ) {
-            resultQuestion_2 = question_2Layout.rwq_option_2
+        if( rwq_option != null ) {
+            resultQuestion_2 = rwq_option
                     .getText()
                     .toString()
                     .toUpperCase();

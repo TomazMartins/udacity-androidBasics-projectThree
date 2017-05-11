@@ -1,6 +1,8 @@
 package br.com.udacity.androidbasics.tomazmartins.metalshow.model;
 
 
+import android.util.Log;
+
 public class RightWrongQuestion extends BaseOneResponseQuestion {
     public RightWrongQuestion() {
         super();

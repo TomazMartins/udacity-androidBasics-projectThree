@@ -71,11 +71,6 @@ public class MultipleAnswersQuestion extends BaseMultipleResponseQuestion {
                 this.getPositionOfLastAnswer()
         );
 
-        Log.i( "LOG", String.valueOf( this.getPositionOfLastAnswer() ) );
-        for( String answer : arrayAnswers ) {
-            Log.i( "LOG", answer );
-        }
-
         this.setCorrectAnswers( Arrays.asList( arrayAnswers ) );
     }
 }

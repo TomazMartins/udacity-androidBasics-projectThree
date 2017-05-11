@@ -13,13 +13,7 @@
     <string name="wrong_answer">Wrong</string>
 
     <!-- Dialog -->
-    <string name="zero_score_msg">Ops&#8230; Maybe next time</string>
-    <string name="bad_msg">I think you can do better</string>
-    <string name="medium_msg">It\'s a good score</string>
-    <string name="good_msg">Hey! Good job.</string>
-    <string name="great_msg">Great! You are a real metal master!</string>
-    <string name="question_in_dialog">Do you want continue?</string>
-    <string name="your_score">Your score is:</string>
+    <string name="your_score">Your score is: </string>
     <string name="std_score">0000</string>
     <string name="example_question">Example Question</string>
     <string name="example_option">Sample Option</string>
