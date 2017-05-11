@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,8 +27,6 @@ import br.com.udacity.androidbasics.tomazmartins.metalshow.model.RightWrongQuest
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static br.com.udacity.androidbasics.tomazmartins.metalshow.R.string.score;
 
 public class MainActivity extends AppCompatActivity {
     @BindView( R.id.txv_total_score ) TextView txv_totalScore;
@@ -69,9 +69,17 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick( R.id.btn_submit )
     public void onSubmit() {
-        int qtdCorrectAnswers = checkAnswers();
+        int qtdCorrectAnswers = checkQuestions();
         score += calculateScore( qtdCorrectAnswers );
         updateScore( score );
+
+        fillQuestions();
+        reset();
+    }
+
+    @OnClick( R.id.btn_reset )
+    public void onReset() {
+        reset();
     }
 
     private void updateScore( int score ) {
@@ -79,10 +87,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int calculateScore( int qtdCorrectAnswers ) {
-        return qtdCorrectAnswers * 10;
+        final int SCORE_FOR_QUESTION = 10;
+
+        return qtdCorrectAnswers * SCORE_FOR_QUESTION;
     }
 
-    private int checkAnswers() {
+    private int checkQuestions() {
         List<Boolean> checksOfCorrectAnswers = new ArrayList<>();
 
         boolean isCorrectQuestion_1 = checkQuestion_1();
@@ -301,5 +311,27 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind( question_4Layout, question_4 );
         ButterKnife.bind( question_5Layout, question_5 );
         ButterKnife.bind( question_6Layout, question_6 );
+    }
+
+    private void reset() {
+        question_1Layout.rwq_option_1.setChecked( false );
+        question_1Layout.rwq_option_2.setChecked( false );
+
+        question_2Layout.rwq_option_1.setChecked( false );
+        question_2Layout.rwq_option_2.setChecked( false );
+
+        question_3Layout.edt_oq.setText( "" );
+
+        for( CheckBox ckb : question_4Layout.options ) {
+            ckb.setChecked( false );
+        }
+
+        for( RadioButton rdb : question_5Layout.options ) {
+            rdb.setChecked( false );
+        }
+
+        for( RadioButton rdb : question_6Layout.options ) {
+            rdb.setChecked( false );
+        }
     }
 }
